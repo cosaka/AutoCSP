@@ -1,0 +1,33 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    
+	<CheckBoxPreference android:key="activate"
+		android:title="@string/activate_title"
+		android:summary="@string/activate_summary"
+        android:defaultValue="false"/>
+	
+    <ListPreference android:key="csp"
+        android:title="@string/csp_title"
+        android:summary="@string/csp_summary"
+        android:dialogTitle="@string/csp_title"
+        android:entries="@array/array_cps"
+        android:entryValues="@array/array_val_cps"/>
+    
+    <PreferenceCategory 
+        android:title="@string/category_call_settings">
+        
+	    <CheckBoxPreference android:key="local_call"
+	        android:title="@string/local_title"
+	        android:summary="@string/local_summary"
+	        android:defaultValue="false"/>
+	    
+	    <EditTextPreference android:key="ddd"
+	        android:title="@string/ddd_title"
+	        android:summary="@string/ddd_summary"
+			android:dialogTitle="@string/ddd_title"
+			android:dialogMessage="@string/ddd_summary"
+			android:inputType="number"
+	        android:defaultValue=""/>
+	    
+    </PreferenceCategory>
+    
+</PreferenceScreen>

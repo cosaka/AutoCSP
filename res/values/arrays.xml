@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_cps">
+        <item >Nenhum</item>
+        <item >Embratel - 21</item>
+        <item >Intelig - 23</item>
+        <item >Sercomtel - 43</item>
+        <item >Oi - 31</item>
+        <item >Vivo - 15</item>
+        <item >Claro - 36</item>
+        <item >TIM - 41</item>
+        <item >Brasil Telecom - 14</item>
+        <item >GVT - 25</item>
+        <item >CTBC - 12</item>
+    </string-array>
+    <string-array name="array_val_cps">
+        <item ></item>
+        <item >21</item>
+        <item >23</item>
+        <item >43</item>
+        <item >31</item>
+        <item >15</item>
+        <item >36</item>
+        <item >41</item>
+        <item >14</item>
+        <item >25</item>
+        <item >12</item>
+	</string-array>
+</resources>
