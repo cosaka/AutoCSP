@@ -1,5 +1,6 @@
 package com.example.autocsp;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
@@ -19,10 +20,13 @@ public class AutoCSP extends PreferenceActivity
 	private static boolean mLocalCall = DEFAULT_LCALL_ACTIVE;
 	private static final String DEFAULT_DDD = ""; 
 	private static String mDDD = DEFAULT_DDD;
+	private static Context mAppContext;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        mAppContext = getApplicationContext();
         
        	addPreferencesFromResource(R.xml.settings);
     }
@@ -93,6 +97,10 @@ public class AutoCSP extends PreferenceActivity
 	
 	public static boolean getLocalCall() {
 		return mLocalCall;
+	}
+	
+	public static Context getAppContext() {
+		return mAppContext;
 	}
 	
 	private void loadSettings() {

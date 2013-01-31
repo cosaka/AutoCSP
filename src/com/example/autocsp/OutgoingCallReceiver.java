@@ -3,6 +3,7 @@ package com.example.autocsp;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.widget.Toast;
 
 public class OutgoingCallReceiver extends BroadcastReceiver {
 	
@@ -76,12 +77,23 @@ public class OutgoingCallReceiver extends BroadcastReceiver {
 				if (AutoCSP.getLocalCall() == true) {
 					if (phoneNumber.startsWith(AutoCSP.getDDD())) {
 						// Local call, then removes the area code
-						return phoneNumber.substring(2, (phoneNumber.length()));
+						phoneNumber = phoneNumber.substring(2, (phoneNumber.length()));
+						
+						CharSequence text = "Chamada local sem DDD.\nDiscando para " + phoneNumber + ".";
+						Toast.makeText(AutoCSP.getAppContext(), text, Toast.LENGTH_LONG).show();
+						
+						// Local call, then removes the area code
+						return phoneNumber;
 					}
 				}
 				
 				// Inserts CSP code
-				return "0" + AutoCSP.getCSP() + phoneNumber;
+				phoneNumber = "0" + AutoCSP.getCSP() + phoneNumber;
+				
+				CharSequence text = "Chamada DDD com CSP " + AutoCSP.getCSP() + ".\nDiscando para" + phoneNumber + ".";
+				Toast.makeText(AutoCSP.getAppContext(), text, Toast.LENGTH_LONG).show();
+				
+				return phoneNumber;
 			}
 		}
 		
