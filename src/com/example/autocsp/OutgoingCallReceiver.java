@@ -9,7 +9,7 @@ public class OutgoingCallReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		
-		if (SettingsActivity.getActive() == false) {
+		if (AutoCSP.getActive() == false) {
 			return;
 		}
 		
@@ -50,7 +50,7 @@ public class OutgoingCallReceiver extends BroadcastReceiver {
 	
 	public String reformatNumber(String phoneNumber)
 	{
-		if (SettingsActivity.getCSP().compareTo("") !=0) {
+		if (AutoCSP.getCSP().compareTo("") !=0) {
 			// Removes "+" symbols
 			while (phoneNumber.startsWith("+")) {
 				phoneNumber = phoneNumber.substring(1, (phoneNumber.length()));
@@ -73,15 +73,15 @@ public class OutgoingCallReceiver extends BroadcastReceiver {
 			
 			if (phoneNumber.length() > (9)) {
 				// It's a call with area code
-				if (SettingsActivity.getLocalCall() == true) {
-					if (phoneNumber.startsWith(SettingsActivity.getDDD())) {
+				if (AutoCSP.getLocalCall() == true) {
+					if (phoneNumber.startsWith(AutoCSP.getDDD())) {
 						// Local call, then removes the area code
 						return phoneNumber.substring(2, (phoneNumber.length()));
 					}
 				}
 				
 				// Inserts CSP code
-				return "0" + SettingsActivity.getCSP() + phoneNumber;
+				return "0" + AutoCSP.getCSP() + phoneNumber;
 			}
 		}
 		

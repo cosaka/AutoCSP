@@ -8,7 +8,7 @@ import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
  
-public class SettingsActivity extends PreferenceActivity
+public class AutoCSP extends PreferenceActivity
 		implements OnSharedPreferenceChangeListener {
 	
 	private static final boolean DEFAULT_ACTIVE = false; 
