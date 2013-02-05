@@ -1,0 +1,4 @@
+AutoCSP
+=======
+
+Android training project.
