@@ -79,8 +79,10 @@ public class OutgoingCallReceiver extends BroadcastReceiver {
 						// Local call, then removes the area code
 						phoneNumber = phoneNumber.substring(2, (phoneNumber.length()));
 						
-						CharSequence text = "Chamada local sem DDD.\nDiscando para " + phoneNumber + ".";
-						Toast.makeText(AutoCSP.getAppContext(), text, Toast.LENGTH_LONG).show();
+						if (AutoCSP.getToast() == true) {
+							String text = String.format(AutoCSP.getAppResources().getString(R.string.toast_local_call), phoneNumber);
+							Toast.makeText(AutoCSP.getAppContext(), text, Toast.LENGTH_LONG).show();
+						}
 						
 						// Local call, then removes the area code
 						return phoneNumber;
@@ -90,8 +92,10 @@ public class OutgoingCallReceiver extends BroadcastReceiver {
 				// Inserts CSP code
 				phoneNumber = "0" + AutoCSP.getCSP() + phoneNumber;
 				
-				CharSequence text = "Chamada DDD com CSP " + AutoCSP.getCSP() + ".\nDiscando para" + phoneNumber + ".";
-				Toast.makeText(AutoCSP.getAppContext(), text, Toast.LENGTH_LONG).show();
+				if (AutoCSP.getToast() == true) {
+					String text = String.format(AutoCSP.getAppResources().getString(R.string.toast_ddd_call), AutoCSP.getCSP(), phoneNumber);
+					Toast.makeText(AutoCSP.getAppContext(), text, Toast.LENGTH_LONG).show();
+				}
 				
 				return phoneNumber;
 			}

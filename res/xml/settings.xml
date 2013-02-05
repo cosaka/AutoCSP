@@ -30,4 +30,14 @@
 	    
     </PreferenceCategory>
     
+    <PreferenceCategory
+        android:title="@string/category_misc_settings">
+	    
+        <CheckBoxPreference android:key="show_toast"
+            android:title="@string/toast_title"
+            android:summary="@string/toast_summary"
+            android:defaultValue="false"/>
+        
+    </PreferenceCategory>
+    
 </PreferenceScreen>

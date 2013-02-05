@@ -16,5 +16,10 @@
     <string name="local_summary">Retira os códigos de CSP e DDD para chamadas locais</string>
     <string name="ddd_title">DDD do chip</string>
     <string name="ddd_summary">Código DDD deste SIM card</string>
+    <string name="category_misc_settings">Outras opções</string>
+    <string name="toast_title">Mostrar informação</string>
+    <string name="toast_summary">Exibe o número corrigido ao discar</string>
+    <string name="toast_local_call">Chamada local sem DDD\nDiscando para %1$s</string>
+    <string name="toast_ddd_call">Chamada DDD com CSP %1$s\nDiscando para %2$s</string>
 
 </resources>

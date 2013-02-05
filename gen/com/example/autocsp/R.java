@@ -29,6 +29,7 @@ public final class R {
         public static final int app_name=0x7f050000;
         public static final int button_call=0x7f050007;
         public static final int category_call_settings=0x7f05000a;
+        public static final int category_misc_settings=0x7f05000f;
         public static final int csp_summary=0x7f050009;
         public static final int csp_title=0x7f050008;
         public static final int ddd_summary=0x7f05000e;
@@ -39,6 +40,10 @@ public final class R {
         public static final int menu_exit=0x7f050002;
         public static final int menu_settings=0x7f050001;
         public static final int title_activity_settings=0x7f050003;
+        public static final int toast_ddd_call=0x7f050013;
+        public static final int toast_local_call=0x7f050012;
+        public static final int toast_summary=0x7f050011;
+        public static final int toast_title=0x7f050010;
     }
     public static final class style {
         /** 
